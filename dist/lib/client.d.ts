@@ -1,13 +1,13 @@
-import { ProcessException, ProcessSigIntException, ProcessSigTermException } from './exceptions/environments/server/process.js';
+import { ProcessException, ProcessSigIntException, ProcessSigTermException } from './exceptions/environments/server/process';
 export declare class ExceptionsClient {
-    browser?: boolean;
-    process?: boolean;
+    readonly browser?: boolean;
+    readonly process?: boolean;
     constructor({ browser, process, processExceptionsHandler, processInteruptHandler, processTerminationHandler, }: {
-        browser?: boolean;
-        process?: boolean;
-        processExceptionsHandler?: (exception: ProcessException) => void;
-        processInteruptHandler?: (exception: ProcessSigIntException) => void;
-        processTerminationHandler?: (exception: ProcessSigTermException) => void;
+        readonly browser?: boolean;
+        readonly process?: boolean;
+        readonly processExceptionsHandler?: (exception: ProcessException) => void;
+        readonly processInteruptHandler?: (exception: ProcessSigIntException) => void;
+        readonly processTerminationHandler?: (exception: ProcessSigTermException) => void;
     });
 }
 //# sourceMappingURL=client.d.ts.map

@@ -1,7 +1,6 @@
-import { ModelField, FormValidationProblem, HttpRequest, ISO8601String, LogLevel, Model, ModelValidationProblem, Task } from '@srclaunch/types';
-import { ExceptionConstructorArgs, ExceptionObject } from '../types/exception';
+import { FormValidationProblem, HttpRequest, ISO8601String, LogLevel, Model, ModelField, ModelValidationProblem, Task } from '@srclaunch/types';
+import { ExceptionCode, ExceptionConstructorArgs, ExceptionObject } from '../types/exception';
 import { ExceptionRemediation } from '../types/remediation';
-import { ExceptionCode } from '../types/exception.js';
 /**
  * @class
  * This is the base class used for all exceptions caught and thrown in .
@@ -16,48 +15,48 @@ import { ExceptionCode } from '../types/exception.js';
  *
  */
 export declare class Exception extends Error {
-    cause?: Exception | Error;
-    code: ExceptionCode;
-    context?: Record<string, unknown>;
-    created: ISO8601String;
-    data?: unknown;
-    description?: string;
-    model?: {
-        name: Model['name'];
-        field?: ModelField['name'];
-        problem?: ModelValidationProblem;
+    readonly cause?: Exception | Error;
+    readonly code: ExceptionCode;
+    readonly context?: Record<string, unknown>;
+    readonly created: ISO8601String;
+    readonly data?: unknown;
+    readonly description?: string;
+    readonly model?: {
+        readonly name: Model['name'];
+        readonly field?: ModelField['name'];
+        readonly problem?: ModelValidationProblem;
     };
-    form?: {
-        field?: ModelField['name'] | string;
-        problem?: FormValidationProblem;
+    readonly form?: {
+        readonly field?: ModelField['name'] | string;
+        readonly problem?: FormValidationProblem;
     };
-    friendlyMessage?: string;
-    id?: string;
-    logLevel?: LogLevel;
-    origin?: {
-        block?: string;
-        file?: string;
-        function?: string;
+    readonly friendlyMessage?: string;
+    readonly id?: string;
+    readonly logLevel?: LogLevel;
+    readonly origin?: {
+        readonly block?: string;
+        readonly file?: string;
+        readonly function?: string;
     };
-    pii?: boolean;
-    request?: HttpRequest;
-    response?: {
-        status?: {
-            code: number;
+    readonly pii?: boolean;
+    readonly request?: HttpRequest;
+    readonly response?: {
+        readonly status?: {
+            readonly code: number;
         };
     };
-    scope?: string;
-    remediation?: ExceptionRemediation;
-    tags?: Record<string, unknown>;
-    task?: {
-        id: Task['id'];
+    readonly scope?: string;
+    readonly remediation?: ExceptionRemediation;
+    readonly tags?: Record<string, unknown>;
+    readonly task?: {
+        readonly id: Task['id'];
     };
-    user?: {
-        id?: string;
-        email?: string;
-        phone?: string;
+    readonly user?: {
+        readonly id?: string;
+        readonly email?: string;
+        readonly phone?: string;
     };
-    __proto__: Error;
+    readonly __proto__: Error;
     constructor(message: string, details?: ExceptionConstructorArgs);
     toJSON(): ExceptionObject;
 }

@@ -1,69 +1,45 @@
-export { ExceptionsClient } from './lib/client.js';
-export { Exception } from './lib/exception.js';
-
-export { captureError } from './lib/capture.js';
-
-export {
-  handleProcessExceptions,
-  handleProcessInterupt,
-  handleProcessTermination,
-} from './lib/process.js';
-export { ExceptionRemediator } from './lib/remediation.js';
-export { ExceptionCode } from './types/exception.js';
-
-export { getExceptionInstance } from './lib/exceptions.js';
-
-export {
-  Warning,
-  UnmanagedException,
-  CaughtException,
-  UncaughtException,
-  UnhandledPromiseRejectionException,
-} from './lib/exceptions/index.js';
-
+export { captureError } from './lib/capture';
+export { ExceptionsClient } from './lib/client';
+export { Exception } from './lib/exception';
+export { getExceptionInstance } from './lib/exceptions';
+export { AuthenticationPasswordResetRequiredException } from './lib/exceptions/authentication/challenges';
+export { AuthenticationMissingDeviceKeyException } from './lib/exceptions/authentication/devices';
 export {
   AuthenticationException,
-  AuthenticationUnauthorizedAccessException,
   AuthenticationLimitExceededException,
   AuthenticationNotAuthorizedException,
   AuthenticationTooManyRequestsException,
+  AuthenticationUnauthorizedAccessException,
   AuthenticationUserNotFoundException,
-} from './lib/exceptions/authentication/index.js';
-export { AuthenticationPasswordResetRequiredException } from './lib/exceptions/authentication/challenges.js';
-export { AuthenticationMissingDeviceKeyException } from './lib/exceptions/authentication/devices.js';
-export { AuthenticationMFAMethodNotFoundException } from './lib/exceptions/authentication/mfa.js';
-
+} from './lib/exceptions/authentication/index';
 export {
   AuthenticationLoginException,
   AuthenticationLoginInvalidCredentialsException,
   AuthenticationLoginTooManyFailedAttemptsException,
-} from './lib/exceptions/authentication/login.js';
-
-export { AuthenticationSignupException } from './lib/exceptions/authentication/signup.js';
-export {
-  AuthenticationUsernameAvailabilityCheckException,
-  AuthenticationAliasExistException,
-  AuthenticationUsernameExistsException,
-} from './lib/exceptions/authentication/username-availability.js';
-
+} from './lib/exceptions/authentication/login';
+export { AuthenticationMFAMethodNotFoundException } from './lib/exceptions/authentication/mfa';
+export { AuthenticationSignupException } from './lib/exceptions/authentication/signup';
 export {
   AuthenticationExpiredAccessTokenException,
-  AuthenticationInvalidAccessTokenException,
-  AuthenticationMissingAccessTokenException,
   AuthenticationExpiredRefreshTokenException,
+  AuthenticationInvalidAccessTokenException,
   AuthenticationInvalidRefreshTokenException,
+  AuthenticationMissingAccessTokenException,
   AuthenticationMissingRefreshTokenException,
-} from './lib/exceptions/authentication/tokens.js';
+} from './lib/exceptions/authentication/tokens';
+export {
+  AuthenticationAliasExistException,
+  AuthenticationUsernameAvailabilityCheckException,
+  AuthenticationUsernameExistsException,
+} from './lib/exceptions/authentication/username-availability';
 export {
   AuthenticationCodeDeliveryFailureException,
   AuthenticationCodeMismatchException,
   AuthenticationExpiredCodeException,
   AuthenticationUserNotConfirmedException,
-} from './lib/exceptions/authentication/verification.js';
-
-export { DatabaseException } from './lib/exceptions/data/db/index.js';
-export { SequelizeNotInitializedException } from './lib/exceptions/data/db/sequelize.js';
-
+} from './lib/exceptions/authentication/verification';
+export { DatabaseException } from './lib/exceptions/data/db/index';
+export { SequelizeNotInitializedException } from './lib/exceptions/data/db/sequelize';
 export {
   FatalException,
   KillProcessException,
@@ -72,9 +48,14 @@ export {
   ProcessSigIntException,
   ProcessSigTermException,
   ProcessWarningException,
-} from './lib/exceptions/environments/server/process.js';
-
-export { NetworkException } from './lib/exceptions/networking/index.js';
+} from './lib/exceptions/environments/server/process';
+export {
+  CaughtException,
+  UncaughtException,
+  UnhandledPromiseRejectionException,
+  UnmanagedException,
+  Warning,
+} from './lib/exceptions/index';
 export {
   HttpException,
   HttpRequestException,
@@ -83,13 +64,8 @@ export {
   MissingCookieException,
   MissingRequestBodyPropertyException,
   MissingRequestUrlParameterException,
-} from './lib/exceptions/networking/http/index.js';
-
-export { ServiceProviderException } from './lib/exceptions/services/index.js';
-export {
-  AWSException,
-  AWSMissingAccessKeyException,
-} from './lib/exceptions/services/aws/index.js';
+} from './lib/exceptions/networking/http/index';
+export { NetworkException } from './lib/exceptions/networking/index';
 export {
   CognitoException,
   CognitoInternalErrorException,
@@ -104,20 +80,23 @@ export {
   CognitoResourceNotFoundException,
   CognitoUnexpectedLambdaException,
   CognitoUserLambdaValidationException,
-} from './lib/exceptions/services/aws/cognito/index.js';
+} from './lib/exceptions/services/aws/cognito/index';
+export {
+  AWSException,
+  AWSMissingAccessKeyException,
+} from './lib/exceptions/services/aws/index';
+export { ServiceProviderException } from './lib/exceptions/services/index';
 export {
   StripeException,
   StripeMissingSecretKeyException,
   StripePaymentMethodRequiredException,
   StripeSubscriptionCreationFailedException,
-} from './lib/exceptions/services/stripe/index.js';
-
+} from './lib/exceptions/services/stripe/index';
 export {
   NullUserException,
   UserException,
   UserStateConflictException,
-} from './lib/exceptions/user/index.js';
-
+} from './lib/exceptions/user/index';
 export {
   InvalidArgumentException,
   InvalidPropertyException,
@@ -125,11 +104,17 @@ export {
   MissingArgumentException,
   MissingPropertyException,
   ValidationException,
-} from './lib/exceptions/validation/index.js';
-
-export { RetryStrategy } from './types/index.js';
+} from './lib/exceptions/validation/index';
+export {
+  handleProcessExceptions,
+  handleProcessInterupt,
+  handleProcessTermination,
+} from './lib/process';
+export { ExceptionRemediator } from './lib/remediation';
+export { ExceptionCode } from './types/exception';
 export type {
   ExceptionConstructorArgs,
   ExceptionObject,
   ExceptionRemediation,
 } from './types/index';
+export { RetryStrategy } from './types/index';
