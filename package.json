@@ -30,7 +30,7 @@
     "build:applab": "applab build",
     "clean": "rm -fr ./dist",
     "git:push": "git push --follow-tags origin main",
-    "release": "yarn version:patch && yarn push",
+    "release": "yarn version:patch && yarn git:push",
     "version:patch": "standard-version",
     "yui": "yarn upgrade-interactive"
   },
