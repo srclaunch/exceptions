@@ -1,14 +1,15 @@
-import  Logger  from '@srclaunch/logger';
-import { Exception } from './exception.js';
+import Logger from '@srclaunch/logger';
+
+import { Exception } from './exception';
 
 const logger = new Logger();
 
 type CaptureOptions = {
-  logger?: Logger;
+  readonly logger?: Logger;
 };
 
 type CaptureResult = {
-  success: boolean;
+  readonly success: boolean;
 };
 
 export async function captureError(
@@ -29,7 +30,7 @@ export async function captureError(
     }
 
     return { success: true };
-  } catch (err) {
+  } catch {
     const exception = new Exception(error.message, { cause: error });
 
     logger.exception(exception.toJSON());

@@ -27,7 +27,7 @@
   },
   "scripts": {
     "build": "yarn clean && yarn build:applab",
-    "build:applab": "applab build",
+    "build:applab": "yarn applab build",
     "clean": "rm -fr ./dist",
     "git:push": "git push --follow-tags origin main",
     "release": "yarn version:patch && yarn git:push",
