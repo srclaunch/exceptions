@@ -3,7 +3,7 @@
     {
       "buildDir": "dist",
       "buildFile": "index.js",
-      "buildTypes": false,
+      "buildTypes": true,
       "bundle": true,
       "codeSplitting": true,
       "define": {},
@@ -12,15 +12,15 @@
       "minify": true,
       "platform": "browser",
       "sourceMap": true,
-      "target": "es2020",
-      "treeShaking": true
+      "target": "esnext",
+      "treeShaking": true,
+      "tsconfigPath": "tsconfig.json"
     },
     {
       "buildDir": "dist",
       "buildFile": "index.cjs.js",
-      "buildTypes": false,
+      "buildTypes": true,
       "bundle": false,
-      "codeSplitting": false,
       "define": {},
       "format": "cjs",
       "inputScripts": ["./src/index.ts"],
@@ -28,7 +28,8 @@
       "platform": "browser",
       "sourceMap": true,
       "target": "es2015",
-      "treeShaking": true
+      "treeShaking": true,
+      "tsconfigPath": "tsconfig.json"
     }
   ]
 }
