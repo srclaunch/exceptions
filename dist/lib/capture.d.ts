@@ -1,4 +1,4 @@
-import Logger from '@srclaunch/logger';
+import { Logger } from '@srclaunch/logger';
 import { Exception } from './exception';
 declare type CaptureOptions = {
     readonly logger?: Logger;

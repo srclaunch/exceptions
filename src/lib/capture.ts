@@ -1,4 +1,4 @@
-import Logger from '@srclaunch/logger';
+import { Logger } from '@srclaunch/logger';
 
 import { Exception } from './exception';
 
