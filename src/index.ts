@@ -110,6 +110,7 @@ export {
   handleProcessInterupt,
   handleProcessTermination,
 } from './lib/process';
+export { expressExceptionMiddleware } from './lib/middleware/express';
 export { ExceptionRemediator } from './lib/remediation';
 export { ExceptionCode } from './types/exception';
 export type {
