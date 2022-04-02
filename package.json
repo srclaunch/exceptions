@@ -32,11 +32,12 @@
     "git:push": "git push --follow-tags origin main",
     "qr": "yarn build && git add . && git commit -m \"Quick release - patch\" && yarn release",
     "release": "yarn version:patch && yarn git:push",
+    "test": "ava",
     "version:patch": "standard-version",
     "yui": "yarn upgrade-interactive"
   },
   "dependencies": {
-    "@srclaunch/logger": "^0.1.13",
+    "@srclaunch/logger": "^0.1.19",
     "luxon": "^2.3.1",
     "nanoid": "^3.3.2",
     "serialize-error": "^9.1.1"
@@ -51,6 +52,7 @@
     "@types/react": "^17.0.43",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
+    "ava": "^4.1.0",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.0",
@@ -82,6 +84,7 @@
     "stylelint-config-recommended": "^7.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^5.0.0",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
   }
 }
