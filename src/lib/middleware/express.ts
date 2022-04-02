@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { Logger } from '@srclaunch/logger';
 import { Exception } from '../../index';
 
-export const expressExceptionMiddleware = async (
+export const expressExceptionMiddleware = (
   err: Exception | Error,
   logger: Logger,
   req: Request,
