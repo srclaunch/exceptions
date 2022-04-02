@@ -1,7 +1,6 @@
-import { Exception } from '@srclaunch/exceptions';
-import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { Logger } from '@srclaunch/logger';
-// const ExceptionResponseHandler = () => {};
+import { Exception } from '../../index';
 
 export const expressExceptionMiddleware = async (
   err: Exception | Error,
