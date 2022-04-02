@@ -1,49 +1,39 @@
-import { ExceptionCode } from '../types/exception.js';
-import { Exception } from './exception.js';
-
-import {
-  CaughtException,
-  UncaughtException,
-  UnhandledPromiseRejectionException,
-  UnmanagedException,
-} from './exceptions/index.js';
-
+import { ExceptionCode } from '../types/exception';
+import { Exception } from './exception';
+import { AuthenticationPasswordResetRequiredException } from './exceptions/authentication/challenges';
 import {
   AuthenticationException,
-  AuthenticationUnauthorizedAccessException,
   AuthenticationLimitExceededException,
   AuthenticationNotAuthorizedException,
   AuthenticationTooManyRequestsException,
+  AuthenticationUnauthorizedAccessException,
   AuthenticationUserNotFoundException,
-} from './exceptions/authentication/index.js';
-import { AuthenticationPasswordResetRequiredException } from './exceptions/authentication/challenges.js';
+} from './exceptions/authentication/index';
 import {
   AuthenticationLoginException,
   AuthenticationLoginInvalidCredentialsException,
   AuthenticationLoginTooManyFailedAttemptsException,
-} from './exceptions/authentication/login.js';
-import { AuthenticationMFAMethodNotFoundException } from './exceptions/authentication/mfa.js';
-import { AuthenticationSignupException } from './exceptions/authentication/signup.js';
-import {
-  AuthenticationUsernameAvailabilityCheckException,
-  AuthenticationAliasExistException,
-  AuthenticationUsernameExistsException,
-} from './exceptions/authentication/username-availability.js';
+} from './exceptions/authentication/login';
+import { AuthenticationMFAMethodNotFoundException } from './exceptions/authentication/mfa';
+import { AuthenticationSignupException } from './exceptions/authentication/signup';
 import {
   AuthenticationExpiredRefreshTokenException,
   AuthenticationInvalidRefreshTokenException,
   AuthenticationMissingRefreshTokenException,
-} from './exceptions/authentication/tokens.js';
+} from './exceptions/authentication/tokens';
+import {
+  AuthenticationAliasExistException,
+  AuthenticationUsernameAvailabilityCheckException,
+  AuthenticationUsernameExistsException,
+} from './exceptions/authentication/username-availability';
 import {
   AuthenticationCodeDeliveryFailureException,
   AuthenticationCodeMismatchException,
   AuthenticationExpiredCodeException,
   AuthenticationUserNotConfirmedException,
-} from './exceptions/authentication/verification.js';
-
-import { DatabaseException } from './exceptions/data/db/index.js';
-import { SequelizeNotInitializedException } from './exceptions/data/db/sequelize.js';
-
+} from './exceptions/authentication/verification';
+import { DatabaseException } from './exceptions/data/db/index';
+import { SequelizeNotInitializedException } from './exceptions/data/db/sequelize';
 import {
   FatalException,
   KillProcessException,
@@ -52,9 +42,13 @@ import {
   ProcessSigIntException,
   ProcessSigTermException,
   ProcessWarningException,
-} from './exceptions/environments/server/process.js';
-
-import { NetworkException } from './exceptions/networking/index.js';
+} from './exceptions/environments/server/process';
+import {
+  CaughtException,
+  UncaughtException,
+  UnhandledPromiseRejectionException,
+  UnmanagedException,
+} from './exceptions/index';
 import {
   HttpException,
   HttpRequestException,
@@ -63,13 +57,8 @@ import {
   MissingCookieException,
   MissingRequestBodyPropertyException,
   MissingRequestUrlParameterException,
-} from './exceptions/networking/http/index.js';
-
-import { ServiceProviderException } from './exceptions/services/index.js';
-import {
-  AWSException,
-  AWSMissingAccessKeyException,
-} from './exceptions/services/aws/index.js';
+} from './exceptions/networking/http/index';
+import { NetworkException } from './exceptions/networking/index';
 import {
   CognitoException,
   CognitoInternalErrorException,
@@ -84,20 +73,23 @@ import {
   CognitoResourceNotFoundException,
   CognitoUnexpectedLambdaException,
   CognitoUserLambdaValidationException,
-} from './exceptions/services/aws/cognito/index.js';
+} from './exceptions/services/aws/cognito/index';
+import {
+  AWSException,
+  AWSMissingAccessKeyException,
+} from './exceptions/services/aws/index';
+import { ServiceProviderException } from './exceptions/services/index';
 import {
   StripeException,
   StripeMissingSecretKeyException,
   StripePaymentMethodRequiredException,
   StripeSubscriptionCreationFailedException,
-} from './exceptions/services/stripe/index.js';
-
+} from './exceptions/services/stripe/index';
 import {
   NullUserException,
   UserException,
   UserStateConflictException,
-} from './exceptions/user/index.js';
-
+} from './exceptions/user/index';
 import {
   InvalidArgumentException,
   InvalidPropertyException,
@@ -105,9 +97,9 @@ import {
   MissingArgumentException,
   MissingPropertyException,
   ValidationException,
-} from './exceptions/validation/index.js';
+} from './exceptions/validation/index';
 
-export const ExceptionMap: { [code: number]: typeof Exception } = {
+export const ExceptionMap: { readonly [code: number]: typeof Exception } = {
   [ExceptionCode.Exception]: Exception,
   [ExceptionCode.UnmanagedException]: UnmanagedException,
   [ExceptionCode.CaughtException]: CaughtException,

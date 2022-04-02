@@ -9,11 +9,11 @@ import { Exception } from '../../../exception';
 import { ServiceProviderException } from '../index';
 
 export class AWSException extends ServiceProviderException {
-  override readonly code = ExceptionCode.AWSException;
-  override readonly description =
+  override code = ExceptionCode.AWSException;
+  override description =
     'An exception originating from the AWS integration occurred.';
-  override readonly logLevel: Exception['logLevel'] = LogLevel.Exception;
-  override readonly remediation: ExceptionRemediation = {
+  override logLevel: Exception['logLevel'] = LogLevel.Exception;
+  override remediation: ExceptionRemediation = {
     response: {
       code: 500,
     },
@@ -25,10 +25,10 @@ export class AWSException extends ServiceProviderException {
 }
 
 export class AWSMissingAccessKeyException extends AWSException {
-  override readonly code = ExceptionCode.StripeMissingSecretKeyException;
-  override readonly description = 'Missing AWS access key token.';
-  override readonly logLevel: Exception['logLevel'] = LogLevel.Critical;
-  override readonly remediation: ExceptionRemediation = {
+  override code = ExceptionCode.StripeMissingSecretKeyException;
+  override description = 'Missing AWS access key token.';
+  override logLevel: Exception['logLevel'] = LogLevel.Critical;
+  override remediation: ExceptionRemediation = {
     response: {
       code: 500,
     },
@@ -37,10 +37,10 @@ export class AWSMissingAccessKeyException extends AWSException {
 }
 
 export class AWSMissingSecretKeyException extends AWSException {
-  override readonly code = ExceptionCode.StripeMissingSecretKeyException;
-  override readonly description = 'Missing AWS secret key token.';
-  override readonly logLevel: Exception['logLevel'] = LogLevel.Critical;
-  override readonly remediation: ExceptionRemediation = {
+  override code = ExceptionCode.StripeMissingSecretKeyException;
+  override description = 'Missing AWS secret key token.';
+  override logLevel: Exception['logLevel'] = LogLevel.Critical;
+  override remediation: ExceptionRemediation = {
     response: {
       code: 500,
     },

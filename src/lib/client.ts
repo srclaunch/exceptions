@@ -14,7 +14,7 @@ import {
 export type ExceptionsClientOptions = {
   readonly environment?: Environment;
   readonly platform?: Platform;
-  readonly process?: {
+  readonly node?: {
     readonly exceptionsHandler?: (exception: ProcessException) => void;
     readonly interuptHandler?: (exception: ProcessSigIntException) => void;
     readonly terminationHandler?: (exception: ProcessSigTermException) => void;
@@ -24,26 +24,20 @@ export type ExceptionsClientOptions = {
 export class ExceptionsClient {
   private readonly environment?: ExceptionsClientOptions['environment'];
   private readonly platform?: ExceptionsClientOptions['platform'];
-  private readonly process?: ExceptionsClientOptions['process'];
+  private readonly node?: ExceptionsClientOptions['node'];
 
-  public constructor({
-    environment,
-    platform,
-    process,
-  }: ExceptionsClientOptions) {
+  public constructor({ environment, platform, node }: ExceptionsClientOptions) {
     this.environment = environment;
     this.platform = platform;
-    this.process = process;
 
-    if (process) {
-      if (process.exceptionsHandler)
-        handleProcessExceptions(process.exceptionsHandler);
+    if (node) {
+      if (node.exceptionsHandler)
+        handleProcessExceptions(node.exceptionsHandler);
 
-      if (process.interuptHandler)
-        handleProcessInterupt(process.interuptHandler);
+      if (node.interuptHandler) handleProcessInterupt(node.interuptHandler);
 
-      if (process.terminationHandler)
-        handleProcessTermination(process.terminationHandler);
+      if (node.terminationHandler)
+        handleProcessTermination(node.terminationHandler);
     }
   }
 }

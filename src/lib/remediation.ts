@@ -1,19 +1,20 @@
 import { Response } from 'express';
-import { Exception } from './exception.js';
-import { UnmanagedException } from './exceptions/index.js';
+
+import { Exception } from './exception';
+import { UnmanagedException } from './exceptions/index';
 
 export type ExceptionResponse = {
-  code: number;
-  description?: string;
-  friendlyMessage?: string;
+  readonly code: number;
+  readonly description?: string;
+  readonly friendlyMessage?: string;
 };
 
 export class ExceptionRemediator {
-  public exception?: Exception = undefined;
+  private exception?: Exception = undefined;
 
   handleException(
     err: Exception | Error,
-    { res }: { res: Response },
+    { res }: { readonly res: Response },
   ): Response<ExceptionResponse> {
     this.exception =
       err instanceof Exception
@@ -29,13 +30,16 @@ export class ExceptionRemediator {
     }
 
     return res.status(500).json({
-      code: 99999,
+      code: 99_999,
       description: 'An unknown error occurred.',
       friendlyMessage: 'An unknown error occurred.',
     });
   }
 
-  getExceptionResponse(): { body: ExceptionResponse; code: number } | null {
+  getExceptionResponse(): {
+    readonly body: ExceptionResponse;
+    readonly code: number;
+  } | null {
     if (this.exception) {
       const { code, description, friendlyMessage, remediation } =
         this.exception;

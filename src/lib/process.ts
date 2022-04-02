@@ -1,13 +1,13 @@
 import {
-  UncaughtException,
-  UnhandledPromiseRejectionException,
-} from './exceptions/index.js';
-import {
   KillProcessException,
   ProcessSigIntException,
   ProcessSigTermException,
   ProcessWarningException,
-} from './exceptions/environments/server/process.js';
+} from './exceptions/environments/server/process';
+import {
+  UncaughtException,
+  UnhandledPromiseRejectionException,
+} from './exceptions/index';
 
 export function handleProcessInterupt(
   cb?: (exception: ProcessSigIntException) => unknown,
@@ -41,9 +41,7 @@ export function handleProcessExceptions(
   ) => unknown,
 ): void {
   process.on('uncaughtException', async (err: UncaughtException) => {
-    if (err.name !== KillProcessException.name) {
-      if (cb) cb(err);
-    }
+    if (err.name !== KillProcessException.name && cb) cb(err);
   });
 
   process.on('unhandledRejection', async (err: Error) => {
