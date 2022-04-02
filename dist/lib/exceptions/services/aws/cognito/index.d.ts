@@ -1,81 +1,81 @@
-import { ExceptionCode } from '../../../../../types/index.js';
+import { ExceptionCode } from '../../../../../types/index';
 import { ExceptionRemediation } from '../../../../../types/remediation';
-import { Exception } from '../../../../exception.js';
-import { AWSException } from '../index.js';
+import { Exception } from '../../../../exception';
+import { AWSException } from '../index';
 export declare class CognitoException extends AWSException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.AWSException;
+    readonly description = "An exception originating from the AWS Cognito integration occurred.";
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 export declare class CognitoInternalErrorException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.CognitoInternalErrorException;
+    readonly description = "An internal error occurred originating from AWS Cognito.";
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 export declare class CognitoInvalidUserPoolConfigurationException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.CognitoInvalidUserPoolConfigurationException;
+    readonly description: string;
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 export declare class CognitoInvalidEmailRoleAccessPolicyException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.CognitoInvalidEmailRoleAccessPolicyException;
+    readonly description = "There is an access policy exception for the role provided for email configuration.";
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 export declare class CognitoInvalidSmsRoleAccessPolicyException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.CognitoInvalidSmsRoleAccessPolicyException;
+    readonly description: string;
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 export declare class CognitoInvalidSmsRoleTrustRelationshipException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.CognitoInvalidSmsRoleTrustRelationshipException;
+    readonly description: string;
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 export declare class CognitoMissingUserPoolClientIdException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
+    readonly code = ExceptionCode.CognitoMissingUserPoolClientIdException;
+    readonly description = "Cognito user pool client ID configuration is missing.";
+    readonly logLevel: Exception['logLevel'];
 }
 export declare class CognitoMissingUserPoolIdException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
+    readonly code = ExceptionCode.CognitoMissingUserPoolIdException;
+    readonly description = "Cognito user pool ID configuration is missing.";
+    readonly logLevel: Exception['logLevel'];
 }
 export declare class CognitoUnexpectedLambdaException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.CognitoUnexpectedLambdaException;
+    readonly description: string;
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 export declare class CognitoInvalidParameterException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.CognitoInvalidParameterException;
+    readonly description = "This exception is thrown when the Cognito service encounters an invalid parameter.";
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 export declare class CognitoInvalidLambdaResponseException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.CognitoInvalidLambdaResponseException;
+    readonly description = "This exception is thrown when the Amazon service encounters an invalid AWS Lambda response.";
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 export declare class CognitoResourceNotFoundException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.CognitoResourceNotFoundException;
+    readonly description = "This exception is thrown when the Cognito service cannot find the requested resource.";
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 export declare class CognitoUserLambdaValidationException extends CognitoException {
-    code: ExceptionCode;
-    description: string;
-    logLevel: Exception['logLevel'];
-    remediation: ExceptionRemediation;
+    readonly code = ExceptionCode.CognitoUserLambdaValidationException;
+    readonly description: string;
+    readonly logLevel: Exception['logLevel'];
+    readonly remediation: ExceptionRemediation;
 }
 //# sourceMappingURL=index.d.ts.map
