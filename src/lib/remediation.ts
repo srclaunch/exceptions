@@ -16,6 +16,7 @@ export class ExceptionRemediator {
     err: Exception | Error,
     { res }: { readonly res: Response },
   ): Response<ExceptionResponse> {
+    console.log('err in exceptionRemediator', err);
     this.exception =
       err instanceof Exception
         ? err
@@ -30,7 +31,7 @@ export class ExceptionRemediator {
     }
 
     return res.status(500).json({
-      code: 99_999,
+      code: 99999,
       description: 'An unknown error occurred.',
       friendlyMessage: 'An unknown error occurred.',
     });
