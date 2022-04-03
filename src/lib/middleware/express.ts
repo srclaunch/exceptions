@@ -19,5 +19,5 @@ export const expressExceptionMiddleware = (
     log.exception(exception.toJSON());
   }
 
-  return next();
+  next();
 };
