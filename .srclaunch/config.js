@@ -11,11 +11,9 @@ export default {
   description: 'Exception handling utilities',
   type: ProjectType.Library,
   build: {
-    formats: [BuildFormat.ESM, BuildFormat.CJS],
+    formats: [BuildFormat.ESM, BuildFormat.UMD],
     platform: BuildPlatform.Node,
-    sourcemap: true,
-    splitting: false,
     target: BuildTarget.ESNext,
-    tool: BuildTool.ESBuild,
+    tool: BuildTool.Vite,
   },
 };
