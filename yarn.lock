@@ -1968,6 +1968,7 @@ __metadata:
   dependencies:
     "@srclaunch/cli": ^0.1.268
     "@srclaunch/dx": ^0.1.43
+    "@srclaunch/logger": ^0.1.63
     "@srclaunch/types": ^0.1.97
     "@types/express": ^4.17.13
     "@types/luxon": ^2.3.1
@@ -2014,6 +2015,17 @@ __metadata:
     typescript: ^4.6.3
   languageName: unknown
   linkType: soft
+
+"@srclaunch/logger@npm:^0.1.63":
+  version: 0.1.63
+  resolution: "@srclaunch/logger@npm:0.1.63"
+  dependencies:
+    chalk: ^5.0.1
+    luxon: ^2.3.2
+    nanoid: ^3.3.3
+  checksum: 817eae97b170d863e131b1a27326cab2d2c75299a52760a27d5044b4710ea7b22bc054e7d5790dc5978170b12c58c4d340e3bb8cbf1619f1b45774f86600c385
+  languageName: node
+  linkType: hard
 
 "@srclaunch/types@npm:^0.1.97":
   version: 0.1.97
