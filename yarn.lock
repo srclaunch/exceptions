@@ -1918,9 +1918,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/cli@npm:^0.1.268":
-  version: 0.1.268
-  resolution: "@srclaunch/cli@npm:0.1.268"
+"@srclaunch/cli@npm:^0.1.270":
+  version: 0.1.270
+  resolution: "@srclaunch/cli@npm:0.1.270"
   dependencies:
     "@rauschma/stringio": ^1.4.0
     "@srclaunch/exceptions": ^0.1.48
@@ -1949,9 +1949,11 @@ __metadata:
     typescript: ^4.6.3
     update-notifier: ^5.1.0
     vite: ^2.9.5
+  peerDependencies:
+    ansi-styles: "*"
   bin:
     srclaunch: dist/index.mjs
-  checksum: 116cf88d771fb44a49adcb9a251e8d7ff510fa5c2aa71eb12b71242480f7780c59027aec38d30d65e6c5ec9c8edb6661787e67b6d4698c918a8c8a0cfff5f9e5
+  checksum: 32c36c249811df0fe5f918bfd0fe9f6a4435eb8f19b481133fd1e572e66a46bad20ace282f26d73d8b4cf8f001869c29edceae8771178de32940436eaeccd3f5
   languageName: node
   linkType: hard
 
@@ -1966,9 +1968,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@srclaunch/exceptions@workspace:."
   dependencies:
-    "@srclaunch/cli": ^0.1.268
+    "@srclaunch/cli": ^0.1.270
     "@srclaunch/dx": ^0.1.43
-    "@srclaunch/logger": ^0.1.63
+    "@srclaunch/logger": ^0.1.64
     "@srclaunch/types": ^0.1.97
     "@types/express": ^4.17.13
     "@types/luxon": ^2.3.1
@@ -2016,14 +2018,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@srclaunch/logger@npm:^0.1.63":
-  version: 0.1.63
-  resolution: "@srclaunch/logger@npm:0.1.63"
+"@srclaunch/logger@npm:^0.1.64":
+  version: 0.1.64
+  resolution: "@srclaunch/logger@npm:0.1.64"
   dependencies:
     chalk: ^5.0.1
     luxon: ^2.3.2
     nanoid: ^3.3.3
-  checksum: 817eae97b170d863e131b1a27326cab2d2c75299a52760a27d5044b4710ea7b22bc054e7d5790dc5978170b12c58c4d340e3bb8cbf1619f1b45774f86600c385
+  checksum: b624edcd47dff150dcfa5fb507cd03e7f26c6fec3a5b37dfc7e2a3049266359ff389671801e7604e1ff67260053c6179908222d5733d075d9928f55a9d7a0b8e
   languageName: node
   linkType: hard
 
