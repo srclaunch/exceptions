@@ -121,6 +121,16 @@ jobs:
           name: '${{ github.event.repository.owner.login }}-${{ github.event.repository.name }}-${{ needs.env-vars.outputs.branch }}-code-coverage.json'
           path: coverage/coverage-summary.json
 
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload test coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
   publish:
     name: Publish package
     needs: [env-vars, build, test]
@@ -145,7 +155,6 @@ jobs:
       - name: Allow private package registry access
         id: allow-private-package-registry-access
         run: |
-          echo "nodeLinker: node-modules" > ./.yarnrc.yml
           echo "npmScopes:" >> ./.yarnrc.yml
           echo "  ${{ github.event.repository.owner.login }}:" >> ./.yarnrc.yml
           echo "    npmRegistryServer: https://registry.npmjs.org" >> ./.yarnrc.yml

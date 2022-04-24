@@ -4,6 +4,7 @@ import {
   BuildTarget,
   BuildTool,
   ProjectType,
+  TestReporter,
 } from '@srclaunch/types';
 
 export default {
@@ -15,5 +16,14 @@ export default {
     platform: BuildPlatform.Node,
     target: BuildTarget.ESNext,
     tool: BuildTool.Vite,
+  },
+  test: {
+    coverage: {
+      reporters: [TestReporter.Lcov, TestReporter.JSONSummary],
+    },
+    files: {
+      include: ['src/**/*.test.{js,jsx,ts,tsx}'],
+    },
+    verbose: true,
   },
 };
