@@ -12,9 +12,9 @@ export default {
   description: 'Exception handling utilities',
   type: ProjectType.Library,
   build: {
-    // bundle: {
-    //   exclude: ['@srclaunch/logger'],
-    // },
+    bundle: {
+      exclude: ['@srclaunch/logger'],
+    },
     formats: [BuildFormat.ESM, BuildFormat.UMD],
     platform: BuildPlatform.Node,
     target: BuildTarget.ESNext,
