@@ -1972,7 +1972,7 @@ __metadata:
   dependencies:
     "@srclaunch/cli": ^0.1.303
     "@srclaunch/dx": ^0.1.44
-    "@srclaunch/logger": ^0.1.67
+    "@srclaunch/logger": ^0.1.69
     "@srclaunch/types": ^0.1.99
     "@types/express": ^4.17.13
     "@types/luxon": ^2.3.1
@@ -2020,15 +2020,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@srclaunch/logger@npm:^0.1.67":
-  version: 0.1.67
-  resolution: "@srclaunch/logger@npm:0.1.67"
+"@srclaunch/logger@npm:^0.1.69":
+  version: 0.1.69
+  resolution: "@srclaunch/logger@npm:0.1.69"
   dependencies:
     ansi-styles: ^6.1.0
     chalk: ^5.0.1
     luxon: ^2.3.2
     nanoid: ^3.3.3
-  checksum: 8becd5c158c9e7b6fe1d09a5981d227240826117ab73f8119add3e44fe731506558170a1ac6cbe433ef94279e99cd258132cb0f656bf6b4b07c9c98e223ffb45
+  checksum: 122396cbf00f73ab74ef76fa9c6f0152dc85a52ae8f23a14e843dc32cac9b52a2cef2b3a2a709a782a1a44fdca946b147e7bf0fa12492b807916a843057800a6
   languageName: node
   linkType: hard
 
