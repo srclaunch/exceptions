@@ -43,12 +43,6 @@ jobs:
           node-version: '16.x'
           cache: 'yarn'
 
-      - name: Enable corepack
-        run: corepack enable
-
-      - name: Enable Yarn Berry
-        run: yarn set version stable
-
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
@@ -91,12 +85,6 @@ jobs:
         with:
           node-version: '16.x'
           cache: 'yarn'
-
-      - name: Enable corepack
-        run: corepack enable
-
-      - name: Enable Yarn Berry
-        run: yarn set version stable
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -148,12 +136,6 @@ jobs:
         with:
           node-version: '16.x'
           cache: 'yarn'
-
-      - name: Enable corepack
-        run: corepack enable
-
-      - name: Enable Yarn Berry
-        run: yarn set version stable
 
       - name: Allow private package registry access
         id: allow-private-package-registry-access
