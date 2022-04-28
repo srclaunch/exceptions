@@ -76,6 +76,7 @@ jobs:
             dist
             package.json
             README.md
+            LICENSE.md
 
   test:
     name: Run tests
