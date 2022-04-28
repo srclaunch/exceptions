@@ -35,7 +35,7 @@
     "yui": "yarn upgrade-interactive"
   },
   "dependencies": {
-    "@srclaunch/logger": "^0.1.75",
+    "@srclaunch/logger": "^0.1.79",
     "luxon": "^2.3.2",
     "nanoid": "^3.3.3",
     "serialize-error": "^10.0.0"
